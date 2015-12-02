@@ -78,7 +78,7 @@ router.get('/:id', needAuth, function(req, res, next) {
       return res.status(500).json({message: 'internal error', desc: err});
     }
     if (!task) {
-      return res.status(404).json({message: 'task not found'});
+      return res.status(404).json({message: 'servey not found'});
     }
     res.json(task);
   });
@@ -90,7 +90,7 @@ router.delete('/:id', needAuth, function(req, res, next) {
       return res.status(500).json({message: 'internal error', desc: err});
     }
     if (!task) {
-      return res.status(404).json({message: 'task not found'});
+      return res.status(404).json({message: 'servey not found'});
     }
     res.json({id: task._id});
   });

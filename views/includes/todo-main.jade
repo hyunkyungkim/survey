@@ -1,19 +1,27 @@
 form#form-task.form-inline(class='todos')
   .form
     .main
-      input(type='text', id='content', name='content', placeholder='해야할 일이 무엇인가요?')
+      input(type='text', id='content', name='content', placeholder='설문지의 제목을 입력해주세요!')
     .sub
       .form-group
         select.form-control(name='category')
-          option(value='개인') 개인
-          option(value='가족') 가족
-          option(value='업무') 업무
+          option(value='설문',selected) 설문유형
+          option(value='학업') 학업
+          option(value='기업') 기업
           option(value='기타') 기타
       .form-group
         select.form-control(name='priority')
-          option(value='1') 중요
-          option(value='2', selected) 보통
-          option(value='3') 사소
+          option(value='man') 남자 
+          option(value='man+woman', selected) 남녀공통
+          option(value='woman') 여자
+      .form-group
+        select.form-control(name='age')
+          option(value='1', selected) 연령대
+          option(value='10대') 10대 
+          option(value='20대') 20대
+          option(value='30대') 30대
+          option(value='40대') 40대
+          option(value='50대외') 50대~
   .actions
       button#post-task.btn.btn-primary.btn-lg.btn-block(type='button') 저장
 
@@ -33,7 +41,7 @@ script#task-template(type='text/template').
       </span>
     <% } %>
     <span class='priority p<%= priority %>'>
-      <%= (priority === 1) ? "중요" : ((priority === 3) ? "사소": "보통") %>
+      <%= (priority === 1) ? "남자" : ((priority === 3) ? "여자": "남녀공통") %>
     </span>
     <a href='#' class='remove'><i class='fa fa-trash-o'></i></a>
   </li>

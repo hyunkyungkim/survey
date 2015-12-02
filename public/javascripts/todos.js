@@ -49,7 +49,7 @@ var TaskController = function() {
     if (!checked('priority', task.priority)) {
       return false;
     }
-    if (_.includes(['개인', '가족', '업무'], task.category)) {
+    if (_.includes(['설문', '학업', '기업','기타'], task.category)) {
       if (!checked('category', task.category)) {
         return false;
       }
