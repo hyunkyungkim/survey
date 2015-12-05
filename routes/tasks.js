@@ -67,6 +67,9 @@ router.put('/:id', needAuth, function(req, res, next) {
     if (req.body.done) {
       task.done = req.body.done;
     }
+    if(req.body.content){
+      task.content = req.body.content;
+    }
     task.save(function(err) {
       if (err) {
         return res.status(500).json({message: 'internal error', desc: err});
@@ -94,7 +97,7 @@ router.delete('/:id', needAuth, function(req, res, next) {
       return res.status(500).json({message: 'internal error', desc: err});
     }
     if (!task) {
-      return res.status(404).json({message: 'servey not found'});
+      return res.status(404).json({message: 'survey not found'});
     }
     res.json({id: task._id});
   });
