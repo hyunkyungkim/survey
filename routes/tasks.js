@@ -22,15 +22,19 @@ router.get('/', needAuth, function(req, res, next) {
 
 router.post('/', needAuth, function(req, res, next) {
   console.log(req.body);
+  if (!req.body.title) {
+    return res.status(400).json({message: 'need title'});
+  }
   if (!req.body.content) {
     return res.status(400).json({message: 'need content'});
   }
   var task = new Task({
-    content: req.body.content,
+    title: req.body.title,
     category: req.body.category || "N/A",
-    priority: req.body.priority || 3,
+    priority: req.body.priority || "남녀무관",
     deadline: req.body.deadline,
-    user: req.user.id
+    user: req.user.id,
+    cotent: req.body.content
   });
   task.save(function(err, doc) {
     if (err) {
@@ -46,10 +50,10 @@ router.put('/:id', needAuth, function(req, res, next) {
       return res.status(500).json({message: 'internal error', desc: err});
     }
     if (!task) {
-      return res.status(404).json({message: 'task not found'});
+      return res.status(404).json({message: 'survey not found'});
     }
-    if (req.body.content) {
-      task.content = req.body.content;
+    if (req.body.title) {
+      task.title = req.body.title;
     }
     if (req.body.category) {
       task.category = req.body.category;

@@ -10,6 +10,17 @@ form.todos {
     margin-bottom: 1em;
     width: 100%;
     box-sizing: border-box; }
+  form.todos .content input[type='text'] {
+    font-size: 1.4em;
+    border: 1px solid #2c9cd2;
+    padding: 5em 5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box; }
+  form.todos .select_question button {
+    margin-top: 0.3em;
+    width: 100%; }
   form.todos .actions button {
     margin-top: 1em; }
 
@@ -33,7 +44,7 @@ form.todos {
       line-height: 2em;
       text-align: center;
       color: #fff; }
-    .tasks li.task .content {
+    .tasks li.task .title {
       font-size: 1.1em;
       font-weight: bold;
       line-height: 2em; }
@@ -89,7 +100,7 @@ form.todos {
     background-color: #009eec; }
     .side section a.selected:before {
       font-family: FontAwesome;
-      content: "\f00c";
+      title: "\f00c";
       display: inline-block;
       vertical-align: middle;
       padding-right: 1em; }

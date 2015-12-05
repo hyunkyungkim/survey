@@ -1,7 +1,7 @@
 form#form-task.form-inline(class='todos')
   .form
     .main
-      input(type='text', id='content', name='content', placeholder='설문지의 제목을 입력해주세요!')
+      input(type='text', id='title', name='title', placeholder='설문지의 제목을 입력해주세요!')
     .sub
       .form-group
         select.form-control(name='category')
@@ -22,13 +22,24 @@ form#form-task.form-inline(class='todos')
           option(value='30대') 30대
           option(value='40대') 40대
           option(value='50대외') 50대~
+      .form-group
+        input(type='text',id='deadline',name='deadline',placeholder='마감일을 입력해주세요')
+    .content
+      h5.quest_select 문제유형을 선택해 주세요:
+      .checked
+        객관식: 
+        input(type='radio', id='object', name='qtype') 
+        주관식: 
+        input(type='radio', id='subject', name='qtype')
+        .qsubmit
+        input(type='submit', id='addquestion',name='add question',추가)   
   .actions
       button#post-task.btn.btn-primary.btn-lg.btn-block(type='button') 저장
 
 ul.tasks
 
 .no-task
-  .alert.alert-info Task가 없습니다.
+  .alert.alert-info 설문내용이 없습니다.
 script#task-template(type='text/template').
   <li class='task <%= doneStr %>' data-id='<%= id %>'>
     <span class='check'>
