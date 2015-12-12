@@ -13,20 +13,11 @@ form.todos {
       box-sizing: border-box;
     }
   }
-  .content {
-    input[type='text'] {
-      font-size: 1.4em;
-      border: 1px solid #2c9cd2;
-      padding: 5em 5em;
-      margin-top: 2em;
-      margin-bottom: 1em;
-      width: 100%;
-      box-sizing: border-box;
+  .sub{
+    textarea{
+      border: 1px solid;
+      padding: 0.5em 0;
     }
-  }
-  .select_question button{
-    margin-top: 0.3em;
-    width: 100%;
   }
   .actions button {
     margin-top: 1em;
@@ -71,6 +62,7 @@ form.todos {
       padding: 0 1em;
       display: none;
     }
+
     &:hover .remove {
       display: block;
     }
@@ -91,7 +83,6 @@ form.todos {
         background-color: #a51e23;
       }
     }
-
 
     &.done {
       background-color: #eee;

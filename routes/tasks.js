@@ -58,14 +58,8 @@ router.put('/:id', needAuth, function(req, res, next) {
     if (req.body.category) {
       task.category = req.body.category;
     }
-    if (req.body.priority) {
-      task.priority = req.body.priority;
-    }
     if (req.body.deadline) {
       task.deadline = req.body.deadline;
-    }
-    if (req.body.done) {
-      task.done = req.body.done;
     }
     if(req.body.content){
       task.content = req.body.content;
@@ -85,7 +79,7 @@ router.get('/:id', needAuth, function(req, res, next) {
       return res.status(500).json({message: 'internal error', desc: err});
     }
     if (!task) {
-      return res.status(404).json({message: 'servey not found'});
+      return res.status(404).json({message: 'survey not found'});
     }
     res.json(task);
   });

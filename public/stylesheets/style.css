@@ -10,17 +10,9 @@ form.todos {
     margin-bottom: 1em;
     width: 100%;
     box-sizing: border-box; }
-  form.todos .content input[type='text'] {
-    font-size: 1.4em;
-    border: 1px solid #2c9cd2;
-    padding: 5em 5em;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    width: 100%;
-    box-sizing: border-box; }
-  form.todos .select_question button {
-    margin-top: 0.3em;
-    width: 100%; }
+  form.todos .sub textarea {
+    border: 1px solid;
+    padding: 0.5em 0; }
   form.todos .actions button {
     margin-top: 1em; }
 
